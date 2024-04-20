@@ -21,12 +21,12 @@ export default function LoginForm() {
         });
 
         if(res?.ok){
-            toast.success("Correct login");
-            window.location.assign("/");
-          }
-          else if(res?.error){
-            toast.error(res?.error);
-          }
+          toast.success("Correct login");
+          window.location.assign("/");
+        }
+        else if(res?.error){
+          toast.error(res?.error);
+        }
       
           setLoading(false);
     }

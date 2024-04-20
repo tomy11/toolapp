@@ -21,11 +21,15 @@ export default function RegisterForm() {
     const register = async () => {
         setLoading(true);
         try {
-            await axios.post('/api/register', {
+            const res = await axios.post('/api/register', {
                 email, password
             });
 
-            toast.success("Successfully registered");
+            if(res){
+                toast.success("Successfully registered");
+                window.location.assign("/login");
+            }
+            //toast.success("Successfully registered");
         } catch (error: any) {
             console.log(error);
             toast.error(error?.response?.data);
