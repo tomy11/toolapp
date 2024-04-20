@@ -9,7 +9,7 @@ interface NextAuthSessionProviderProps{
 
 export default function NextAuthSessionProvider({children} : NextAuthSessionProviderProps) {
   return (
-    <SessionProvider>
+    <SessionProvider basePath="/api/auth" >
       {children}
     </SessionProvider>
   )
